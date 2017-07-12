@@ -136,7 +136,7 @@ public class MultiWindowTest {
 
         // By clicking on the auto complete term, the text should be filled in.
         onView(withId(R.id.auto_complete_text_view))
-                .check(matches(withText("South China Sea")));
+                .check(matches(withText("Fail for sure")));
     }
 
     @Test
