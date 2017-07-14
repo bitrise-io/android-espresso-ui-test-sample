@@ -135,8 +135,13 @@ public class MultiWindowTest {
                 .perform(click());
 
         // By clicking on the auto complete term, the text should be filled in.
-        onView(withId(R.id.auto_complete_text_view))
-                .check(matches(withText("Fail for sure")));
+        if(android.os.Build.VERSION.SDK_INT == 23) {
+            onView(withId(R.id.auto_complete_text_view))
+                    .check(matches(withText("Fail for sure")));
+        }else {
+            onView(withId(R.id.auto_complete_text_view))
+                    .check(matches(withText("South China Sea")));
+        }
     }
 
     @Test
